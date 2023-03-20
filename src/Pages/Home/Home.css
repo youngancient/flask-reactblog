@@ -1,0 +1,19 @@
+.home{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.bdr{
+    border: 1px solid black;
+}
+.home h1{
+    text-align: center;
+}
+.home h1 strong{
+    transition: 1s;
+}
+@media screen and (min-width: 728px) {
+    .home{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

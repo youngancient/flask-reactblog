@@ -1,0 +1,66 @@
+
+.Bloglist{
+    margin-top: 2rem;
+    z-index: 1;
+}
+.blog-preview{
+    padding: 1rem;
+    cursor: pointer;
+    /* box-shadow: 0.5px 0.5px 0.5px 0.5px hsla(201, 16%, 40%, 0.3); */
+    box-shadow: -2px 2px 5px 2px hsl(0, 0%, 90%);
+    margin-top: 2rem;
+    z-index: 1;
+}
+.blog-preview p{
+    margin-top: 1rem;
+}
+
+.Bloglist h1{
+    font-size: 2.5rem;
+}
+.Bloglist h2{
+    font-size: 1.5rem;
+    color: rgb(209, 41, 41);
+}
+.button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.button button{
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    background: hsla(200, 35%, 13%);
+    color: #fff;
+    border-radius: 5px;
+}
+.button button:hover{
+    background: rgb(209, 41, 41);
+}
+.like{
+    display: flex;
+    align-items: center;
+}
+.like span{
+    margin-left: 0.25rem;
+    font-weight: 600;
+}
+.like i{
+    font-size: 1.5rem;
+    color: rgb(209, 41, 41);;
+}
+@media screen and (min-width:728px) {
+    .Bloglist{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .blog-preview{
+        width: 80%;
+        padding: 1.5rem;
+    }
+}

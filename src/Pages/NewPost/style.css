@@ -1,0 +1,119 @@
+.form-ele {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.2rem;
+}
+form {
+  padding: 1rem;
+}
+.form-ele input {
+  height: 50px;
+  padding: 1rem;
+  margin-top: 0.25rem;
+  outline: 0;
+  border: 1px solid #d9d9d9;
+}
+.form-ele input:focus,
+.form-ele textarea:focus, .btn button:hover {
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+}
+.form-ele textarea {
+  padding: 1rem;
+  margin-top: 0.25rem;
+  outline: 0;
+  border: 1px solid #d9d9d9;
+}
+.form-ele:nth-of-type(1) {
+  margin-top: 0;
+}
+.added {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date,
+.time {
+  width: 49%;
+}
+form label {
+  font-weight: 500;
+}
+.mtop {
+  margin-top: 0.25rem;
+}
+.mtop .ant-picker {
+  width: 100%;
+}
+.btn {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .btn button {
+    height: 50px;
+    cursor: pointer;
+    outline: 0;
+    font-weight: 500;
+  }
+  .btn button:nth-of-type(2){
+    margin-top: 1rem;
+  }
+  .post-btn{
+    background: #4096ff;
+    color: #fff;
+    border: 0;
+  }
+  .draft-btn{
+    border: 2px solid #d9d9d9;
+    background: transparent;
+  }
+  .form-ele .error{
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
+@media screen and (min-width: 728px) {
+  form {
+    width: 80%;
+  }
+  .mtop {
+    margin-top: 0.5rem;
+  }
+  .new-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  .form-ele {
+    margin-top: 1.5rem;
+  }
+  .btn {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn button {
+    width: 45%;
+    height: 45px;
+  }
+  .btn button:nth-of-type(2){
+    margin-top: 0rem;
+  }
+}
+@media screen and (min-width: 998px) {
+  form {
+    width: 80%;
+  }
+  .new-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  .btn {
+    margin-top: 5rem;
+  }
+}

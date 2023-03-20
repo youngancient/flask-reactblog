@@ -1,0 +1,12 @@
+
+
+.empty{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty h3{
+    color: blue;
+    font-size: 1.5rem;
+}

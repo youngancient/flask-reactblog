@@ -1,0 +1,82 @@
+
+nav{
+    display: flex;
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2000;
+}
+nav h1{
+    color: blue;
+}
+header{
+    box-shadow: -2px 2px 5px 2px hsl(0, 0%, 90%);
+}
+.bdr{
+    border: 1px solid black;
+}
+.logo strong{
+    color: rgb(209, 41, 41);
+}
+.links{
+    width: 50%;
+    padding: 8px;
+}
+.links a{
+    margin-left: 4rem;
+    font-weight: 600;
+}
+.links a:hover{
+    color: rgb(209, 41, 41);
+}
+.to{
+    z-index: 200;
+}
+.dropdown{
+    position: absolute;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    background: hsla(200, 35%, 13%, 0.4);
+}
+.dropdown .a{
+    margin-top: 1rem;
+    padding: 10px;
+}
+.a a{
+    color: #fff;
+}
+.hidden{
+    overflow-y: hidden;
+}
+
+.desktop{
+    display: none;
+  }
+@media screen and (min-width: 728px) {
+    nav{
+        padding-left: 2rem;
+    }
+    .links{
+        display: flex;
+        justify-content: center;
+    }
+    .links a{
+        margin-left: 1rem;
+    }
+    .mobile{
+        display: none;
+      }
+      .desktop{
+        display: flex;
+      }
+}
+@media screen and (min-width: 998px) {
+    .links a{
+        margin-left: 3rem;
+    }
+}
