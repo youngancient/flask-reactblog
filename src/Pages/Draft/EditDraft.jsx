@@ -5,12 +5,11 @@ import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import dayjs  from "dayjs";
 import BlogServer from "../../BlogServer/BlogServer";
-import {useNavigate} from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-
-
-// I am having issues with the date and timepicker i got from antd , i need to solve this issue ASAP
-
+// still have issues with page animations
+// editing drafts especially the date, time fields.
+// the like isnt updating - fixed
 
 const postVariants = {
   initial: {
@@ -36,22 +35,48 @@ const postVariants = {
 };
 const timeFormat = "HH:mm";
 const dateFormat = 'YYYY-MM-DD';
-const NewPost = () => {
-
+const EditDraft = () => {
+    const [defaultForm, setDefaultForm] = useState({
+      author: "",
+      body: "",
+      title : "",
+      date: null,
+      time: null,
+      likes: 0,
+      published : true,
+    });
+  const loc = useLocation();
+  let state = loc.state;
+  let param = useParams();
+  const id = param.id;
+  useEffect(()=>{
+    if(state){
+      console.log(state)
+      setDefaultForm({
+        ...state,
+        published : true
+      })
+    }else{
+      BlogServer
+      .getOne(id)
+      .then(res =>{
+        setDefaultForm({
+            ...res.data,
+            date: null,
+            time: null,
+            published : true
+        })
+      })
+      .catch((err) => {
+        console.log("error");
+      });
+    }
+  },[])
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "all" });
-  const [defaultForm, setDefaultForm] = useState({
-    author: "",
-    body: "",
-    title : "",
-    date: null,
-    time: null,
-    likes: 0,
-    published : true,
-  });
 
   const [err, setErrors] = useState({
     date: false,
@@ -156,16 +181,12 @@ const NewPost = () => {
       });
       // console.log(moreData);
       BlogServer
-      .create(moreData);
+      .updateDraft(id,moreData);
       isDraft ? navigate("/drafts") : navigate("/"); 
     }
   };
   const handleError = (errors) => {};
-  const control =(string)=>{
-    if (string == null){
-      return null;
-    }
-  }
+ 
   return (
     <motion.div
       className="new-post"
@@ -187,7 +208,7 @@ const NewPost = () => {
             onChange={authorChange}
           />
           {errors.author && errors.author.type === "required" && (
-            <p className="error">Author name is required</p>
+            <p className="error">Author name not changed</p>
           )}
         </div>
         <div className="form-ele">
@@ -201,7 +222,7 @@ const NewPost = () => {
             onChange={titleChange}
           />
           {errors.title && errors.title.type === "required" && (
-            <p className="error">Title is required</p>
+            <p className="error">Title not changed</p>
           )}
         </div>
         <div className="form-ele">
@@ -216,7 +237,7 @@ const NewPost = () => {
             onChange={contentChange}
           ></textarea>
           {errors.body && errors.body.type === "required" && (
-            <p className="error">Content cannot be empty</p>
+            <p className="error">Content not changed</p>
           )}
         </div>
         <div className="form-ele added">
@@ -228,6 +249,7 @@ const NewPost = () => {
                 name="date"
                 size="large"
                 format={dateFormat}
+                defaultValue={defaultForm.date}
               />
             </div>
             {err.date && <p className="error">Date cannot empty</p>}
@@ -239,6 +261,7 @@ const NewPost = () => {
                 name="time"
                 format={timeFormat}
                 size="large"
+                defaultValue={defaultForm.time}
                 onChange={handleTime}
               />
             </div>
@@ -247,10 +270,10 @@ const NewPost = () => {
         </div>
         <div className="form-ele btn">
           <button type="submit" className="post-btn" onClick={()=> setIsDraft(false)}>
-            Post
+            Publish
           </button>
           <button className="draft-btn" onClick={()=> setIsDraft(true)}>
-            Draft
+            Save
           </button>
         </div>
       </form>
@@ -258,4 +281,4 @@ const NewPost = () => {
   );
 };
 
-export default NewPost;
+export default EditDraft;

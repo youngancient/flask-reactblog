@@ -1,0 +1,54 @@
+
+.draftlist{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+.draftlist .button{
+    justify-content: end;
+}
+.draftlist .search{
+    width: 100%;
+}
+.draftlist .button button:hover{
+    background: blue;
+}
+.draftlist .blog-preview{
+    width: 100%;
+}
+.draftlist .search-input, .draftlist .head{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.draftlist input{
+    width:100%;
+}
+.draftlist .blog-preview h2{
+    color: blue;
+}
+.draftlist .search{
+    margin-top: 0.75rem;
+}
+.draft-detail .button{
+    justify-content: end;
+}
+@media screen and (min-width: 728px) {
+    .draftlist{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .draftlist .search-input{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 998px) {
+    .draftlist{
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}

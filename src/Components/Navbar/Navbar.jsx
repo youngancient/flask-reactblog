@@ -8,10 +8,12 @@ const Navbar = (props) => {
   const handleMenu = () => setClick(!isClicked);
   return (
     <div className="header">
-      <nav>
+      <nav className="">
+        <div className="h1">
         <h1 className="logo">
           Young<strong>Ancients</strong>
         </h1>
+        </div>
         <div className="links desktop">
           <a href="/" className="">
             Home
@@ -38,15 +40,15 @@ const Navbar = (props) => {
         </div>
       </nav>
       <div className="to">
-      <AnimatePresence>
-        {isClicked && (
-          <Dropdown
-            clicked={isClicked}
-            handleMenu={handleMenu}
-            key="dropdown"
-          />
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {isClicked && (
+            <Dropdown
+              clicked={isClicked}
+              handleMenu={handleMenu}
+              key="dropdown"
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

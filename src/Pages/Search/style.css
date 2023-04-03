@@ -22,6 +22,15 @@
   .head h3{
     font-size: 1.5rem;
   }
+  .results .koko{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+  }
+  .results{
+    padding: 1rem;
+  }
   @media screen and (min-width: 728px) {
     .search-cont{
         display: flex;
@@ -42,5 +51,8 @@
     .head h3{
         margin-left: 0.75rem;
         font-size: 2rem;
+    }
+    .results{
+      padding: 0;
     }
   }

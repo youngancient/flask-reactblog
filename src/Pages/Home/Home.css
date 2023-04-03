@@ -1,6 +1,8 @@
 .home{
     margin-top: 1rem;
     padding: 1rem;
+    z-index: 1;
+    position: relative;
 }
 .bdr{
     border: 1px solid black;

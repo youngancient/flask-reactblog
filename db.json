@@ -1,0 +1,74 @@
+{
+  "blogs": [
+    {
+      "title": "The Science of Innovations",
+      "body": "The blog’s ruggedly playful green and yellow color scheme evokes nature and sunshine. The blog’s homepage features visual testimonials of happy clients enjoying their adventures. She embeds her Instagram Feed directly onto her site, spreading the word about her service and drawing people deeper into her brand. The blog design mirrors its content in depth and expertise. Detailed posts provide detailed guidance on activities such as canyoneering and hiking. From the written content, it’s clear that Arika is an expert in her field, and the visuals confirm her photography skills.",
+      "author": "Ada Lovelace",
+      "id": 0,
+      "likes": 12,
+      "time": "13:33",
+      "date": "2023-03-30",
+      "published": true
+    },
+    {
+      "author": "Hanif",
+      "title": "My review of 2022",
+      "body": "The blog’s ruggedly playful green and yellow color scheme evokes nature and sunshine. The blog’s homepage features visual testimonials of happy clients enjoying their adventures. She embeds her Instagram Feed directly onto her site, spreading the word about her service and drawing people deeper into her brand. The blog design mirrors its content in depth and expertise. Detailed posts provide detailed guidance on activities such as canyoneering and hiking. From the written content, it’s clear that Arika is an expert in her field, and the visuals confirm her photography skills.\n\nAdora Nwodo",
+      "likes": 0,
+      "published": false,
+      "time": "13:33",
+      "date": "2023-03-30",
+      "id": 1
+    },
+    {
+      "author": "Reactplay",
+      "title": "Dey Play with react",
+      "body": "React can be used as a base in the development of single-page, mobile, or server-rendered applications with frameworks like Next.js. However, React is only concerned with the user interface and rendering components to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality\nWritten in JavaScript—rendered with native code\nReact primitives render to native platform UI, meaning your app uses the same native platform APIs other apps do.\n\nMany platforms, one React. Create platform-specific versions of components so a single codebase can share code across platforms. With React Native, one team can maintain multiple platforms and share a common technology—React.",
+      "likes": 6,
+      "published": true,
+      "time": "15:59",
+      "date": "2023-03-31",
+      "id": 2
+    },
+    {
+      "title": "Education over schooling? which is worth it",
+      "body": "The blog’s ruggedly playful green and yellow color scheme evokes nature and sunshine. The blog’s homepage features visual testimonials of happy clients enjoying their adventures. She embeds her Instagram Feed directly onto her site, spreading the word about her service and drawing people deeper into her brand. The blog design mirrors its content in depth and expertise. Detailed posts provide detailed guidance on activities such as canyoneering and hiking. From the written content, it’s clear that Arika is an expert in her field, and the visuals confirm her photography skills.",
+      "author": "Jude Tochy",
+      "id": 4,
+      "likes": 1,
+      "time": "13:33",
+      "date": "2023-03-30",
+      "published": false
+    },
+    {
+      "title": "Why I began the Rumbling",
+      "body": "The blog’s ruggedly playful green and yellow color scheme evokes nature and sunshine. The blog’s homepage features visual testimonials of happy clients enjoying their adventures. She embeds her Instagram Feed directly onto her site, spreading the word about her service and drawing people deeper into her brand. The blog design mirrors its content in depth and expertise. Detailed posts provide detailed guidance on activities such as canyoneering and hiking. From the written content, it’s clear that Arika is an expert in her field, and the visuals confirm her photography skills.",
+      "author": "Eren Yeager",
+      "id": 6,
+      "likes": 3,
+      "time": "13:33",
+      "date": "2023-03-30",
+      "published": true
+    },
+    {
+      "author": "Jude Tochy",
+      "title": "The art of blog writing",
+      "body": "A good framework choice for this blog could be Next.js or Gatsby. Both are ideal to make text-driven websites like blogs because they are server-rendered frameworks and give you better SEO. This is compared to a traditional client-rendered React app (one made with Create React App, for example).\n\nOur stack will consist of one of these React frameworks plus a transformer to convert our markdown content into HTML when our site is built. A good choice to transform our markdown content is the remark npm package.\n\nIf you want to make an even more impressive blog, with dynamic content, then you can consider using MDX. MDX is very similar to plain markdown, but it also allows you to include your own custom React components within the markdown.",
+      "likes": 1,
+      "time": "14:27",
+      "date": "2023-03-30",
+      "id": 7,
+      "published": false
+    },
+    {
+      "author": "Mikasa",
+      "title": "Why I love eren and had to kill him",
+      "body": "Mikasa Ackerman is one of the main characters of the anime series Attack on Titan, and it’s widely assumed that almost every character within the show has a crush on her. Eren Yeager has a particularly strong admiration for her, and displays signs of intense jealousy when other characters take too much of her attention.\n\nArmin Arlert is known to appreciate her beauty, courage, and strength, and considers her his closest friend. Sasha, being of the same age as Mikasa, is naturally enamored with her beauty and capabilities, and will occasionally compete with Eren for her attention.\n\nReiner Braun shows signs of affection for Mikasa and is constantly making excuses to be close to her. Others like Jean Kirstein also seem to have a thing for her, which sparks ridicule and a feeling of disdain from Eren.\n\nI love eren!!!",
+      "likes": 3,
+      "published": true,
+      "time": "15:58",
+      "date": "2023-03-31",
+      "id": 8
+    }
+  ]
+}

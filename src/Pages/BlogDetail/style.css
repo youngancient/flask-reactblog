@@ -1,0 +1,58 @@
+.blog-detail {
+  padding: 1.5rem;
+  padding-top: 0;
+}
+.blog-detail h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+article {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.author {
+  margin-top: 1rem;
+}
+.likes {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.likes span {
+  margin-left: 0.25rem;
+}
+.back button {
+  font-size: 1.2rem;
+  height: 40px;
+  width: 100px;
+  font-weight: 600;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+@media screen and (min-width: 728px) {
+  .blog-detail h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  .blog-detail {
+    padding: 2rem;
+    padding-top: 0;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .home {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 998px) {
+  .blog-detail {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}

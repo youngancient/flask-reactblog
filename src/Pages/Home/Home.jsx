@@ -1,10 +1,11 @@
 import "./Home.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Empty from "../../Components/Empty/Empty";
 import BlogList from "../../Components/Bloglist/Bloglist";
 import { motion } from "framer-motion";
+import BlogServer from "../../BlogServer/BlogServer";
 
-const homeVariants = {
+const pageVariants = {
   initial: {
     opacity: 0,
     x: "-100vw",
@@ -22,55 +23,28 @@ const homeVariants = {
     opacity: 0,
     x: "-100vw",
     transition: {
-      duration: 2,
+      duration: 1,
     },
   },
 };
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([
-    {
-      title: "My new website",
-      body: "A town hall different from Balablu blublu bulaba",
-      author: "mario",
-      id: 0,
-      likes: 0,
-    },
-    {
-      title: "My review of 2022",
-      body: "A town hall different from Balablu blublu bulaba",
-      author: "Hanif",
-      id: 1,
-      likes: 0,
-    },
-    {
-      title: "2023 ahead ahead",
-      body: "A town hall different from Balablu blublu bulaba",
-      author: "Ghene",
-      id: 2,
-      likes: 0,
-    },
-    {
-      title: "Finding You",
-      body: "A town hall different from Balablu blublu bulaba",
-      author: "Jude",
-      id: 3,
-      likes: 0,
-    },
-    {
-      title: "The Science of Innovations",
-      body: "A town hall different from Balablu blublu bulaba",
-      author: "Jude",
-      id: 4,
-      likes: 0,
-    },
-  ]);
-
+  const [blogs, setBlogs] = useState([]);
+  useEffect(()=>{
+    BlogServer
+    .getAll()
+    .then(res =>{
+      const published = res.data.filter((ele)=>{
+        return ele.published == true;
+      });
+      setBlogs(published);
+    })
+  },[])
   const blogNumber = blogs.length;
   return (
     <motion.div
       className="home"
-      variants={homeVariants}
+      variants={pageVariants}
       initial="initial"
       animate="final"
       exit="exit"
@@ -85,11 +59,13 @@ const Home = () => {
           ({blogNumber})
         </strong>
       </h1>
-      {blogs.length == 0 ? (
-        <Empty />
-      ) : (
-        <BlogList blogs={blogs} setBlogs={setBlogs} />
-      )}
+      <div className="">
+        {blogs.length == 0 ? (
+          <Empty />
+        ) : (
+          <BlogList blogs={blogs} setBlogs={setBlogs} />
+        )}
+      </div>
     </motion.div>
   );
 };
