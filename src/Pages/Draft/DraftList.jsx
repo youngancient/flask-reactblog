@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import BlogServer from "../../BlogServer/BlogServer";
 import Draft from "./Draft";
 import "./style.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const pageVariants = {
   initial: {
@@ -44,23 +44,24 @@ const DraftList = () => {
 
   const handleClick = (e) => {
     let m = e.target.value.trim().toLowerCase();
-    if(m == ""){
+    if (m == "") {
       setIsSearch(false);
-    }else{
+    } else {
       setIsSearch(true);
     }
     setQ(m);
-    const filtered = duplicate.filter((blog)=>{
+    const filtered = duplicate.filter((blog) => {
       return blog.title.toLowerCase().includes(q) && blog.published == false;
     });
     setDrafts(filtered);
   };
   return (
-    <motion.div className="draftlist"
-    variants={pageVariants}
-    initial="initial"
-    animate="final"
-    exit="exit"
+    <motion.div
+      className="draftlist"
+      variants={pageVariants}
+      initial="initial"
+      animate="final"
+      exit="exit"
     >
       <div className="search">
         <div className="search-cont">
@@ -80,9 +81,18 @@ const DraftList = () => {
           </div>
         </div>
       </div>
+      <AnimatePresence>
       {drafts.map((draft) => (
-        <Draft draft={draft} key={draft.id} />
+        <Draft
+          draft={draft}
+          key={draft.id}
+          drafts={drafts}
+          setDrafts={setDrafts}
+          duplicate={duplicate}
+          setDuplicate={setDuplicate}
+        />
       ))}
+      </AnimatePresence>
     </motion.div>
   );
 };

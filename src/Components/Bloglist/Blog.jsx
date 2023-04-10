@@ -12,6 +12,14 @@ const blogVariants = {
       duration: 1.5,
     },
   },
+  exit : {
+    scale : 0.9,
+    opacity : 0,
+    x : "-100px",
+    transition: {
+      duration: 0.75,
+    },
+  }
 };
 const Blog = ({ blog, blogs, author, title, likes, setBlogs, date, time }) => {
   const navigate = useNavigate();
@@ -50,6 +58,7 @@ const Blog = ({ blog, blogs, author, title, likes, setBlogs, date, time }) => {
       initial="initial"
       viewport={{ once: true }}
       whileInView="final"
+      exit= "exit"
     >
       <h2 onClick={handleClick}>{title}</h2>
       <p onClick={handleClick}>Written by <strong>{author}</strong></p>

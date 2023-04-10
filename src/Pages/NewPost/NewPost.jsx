@@ -66,7 +66,7 @@ const NewPost = () => {
       date: dateString,
     };
     setDefaultForm(update);
-    if(defaultForm.date != null){
+    if(update.date != null){
       setErrors({
         ...err,
         date: false,
@@ -79,7 +79,7 @@ const NewPost = () => {
       time: timeString,
     };
     setDefaultForm(update);
-    if (defaultForm.time !== null) {
+    if (update.time !== null) {
       setErrors({
         ...err,
         time: false,
@@ -230,7 +230,7 @@ const NewPost = () => {
                 format={dateFormat}
               />
             </div>
-            {err.date && <p className="error">Date cannot empty</p>}
+            {defaultForm.date == null && <p className="error">Date cannot empty</p>}
           </div>
           <div className="time">
             <label htmlFor="time">Time</label>
@@ -242,7 +242,7 @@ const NewPost = () => {
                 onChange={handleTime}
               />
             </div>
-            {err.time && <p className="error">Time cannot empty</p>}
+            {defaultForm.time == null && <p className="error">Time cannot empty</p>}
           </div>
         </div>
         <div className="form-ele btn">

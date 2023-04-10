@@ -9,13 +9,16 @@
     padding-bottom: 3rem;
 }
 .draftlist .button{
-    justify-content: end;
+    justify-content: space-between;
 }
 .draftlist .search{
     width: 100%;
 }
 .draftlist .button button:hover{
     background: blue;
+}
+.draftlist .button .del:hover{
+    background: red;
 }
 .draftlist .blog-preview{
     width: 100%;

@@ -51,10 +51,11 @@ const EditDraft = () => {
   const id = param.id;
   useEffect(()=>{
     if(state){
-      console.log(state)
       setDefaultForm({
         ...state,
-        published : true
+        published : true,
+        date: null,
+        time: null,
       })
     }else{
       BlogServer
@@ -145,6 +146,7 @@ const EditDraft = () => {
       time: defaultForm.time,
       date: defaultForm.date,
     };
+    console.log(moreData);
     if (defaultForm.date === null && defaultForm.time == null) {
       setErrors({
         date: true,
@@ -179,7 +181,7 @@ const EditDraft = () => {
         likes: 0,
         published : true,
       });
-      // console.log(moreData);
+      console.log(moreData);
       BlogServer
       .updateDraft(id,moreData);
       isDraft ? navigate("/drafts") : navigate("/"); 
@@ -252,7 +254,7 @@ const EditDraft = () => {
                 defaultValue={defaultForm.date}
               />
             </div>
-            {err.date && <p className="error">Date cannot empty</p>}
+            {defaultForm.date === null && <p className="error">Date cannot empty</p>}
           </div>
           <div className="time">
             <label htmlFor="time">Time</label>
@@ -265,7 +267,7 @@ const EditDraft = () => {
                 onChange={handleTime}
               />
             </div>
-            {err.time && <p className="error">Time cannot empty</p>}
+            {defaultForm.time === null && <p className="error">Time cannot empty</p>}
           </div>
         </div>
         <div className="form-ele btn">

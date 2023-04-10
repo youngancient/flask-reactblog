@@ -44,7 +44,7 @@ const Search = () => {
       <div className="results">
         {blogs && isSearch && <BlogList blogs={blogs} setBlogs={setBlogs} />}
         {isSearch == false && <p className="koko">Blud search for something!!</p>}
-      </div>
+      </div>``
     </div>
   );
 };
